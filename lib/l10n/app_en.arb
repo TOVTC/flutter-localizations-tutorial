@@ -30,5 +30,18 @@
         "format": "compact"
         }
     }
+    },
+    "genders": "male:female:other",
+    "@genders": {
+        "description": "A list of dropdown gender options"
+    },
+    "pronoun": "{gender, select, male{he} female{she} other{they}}",
+    "@pronoun": {
+    "description": "A gendered message",
+    "placeholders": {
+        "gender": {
+        "type": "String"
+        }
+    }
     }
 }

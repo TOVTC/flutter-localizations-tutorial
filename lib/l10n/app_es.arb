@@ -3,5 +3,7 @@
     "title": "Flutter Localizations Tutorial",
     "hello": "¡Hola, {userName}",
     "counterSentence": "Ha hecho clic en el botón",
-    "nClicks": "{count, plural, =0{cero veces} =1{a tiempo} other{{count} veces}}"
+    "nClicks": "{count, plural, =0{cero veces} =1{a tiempo} other{{count} veces}}",
+    "genders": "masculino:femenino:otro",
+    "pronoun": "{gender, select, male{él} female{ella} other{ellos}}"
 }
