@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Localizations Sample App',
+      // onGenerateTitle is a callback function that dynamically generates the app's title based on the current BuildContext
+      // The title property is a static property that sets a fixed title for the entire app and does not change dynamically based on the context or state
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.title,
+      
       // this provides manual localizationDelegates and supportedLocales
       // localizationsDelegates: const [
       //   GlobalMaterialLocalizations.delegate,
@@ -60,14 +63,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        // the locale will automatically change text depending on the language of the device
-        title: Text(AppLocalizations.of(context)!.helloWorld),
+        // the locale will automatically change text depending on device settings
+        title: Text(AppLocalizations.of(context)!.title),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(AppLocalizations.of(context)!.helloWorld),
+            Text(AppLocalizations.of(context)!.hello('Cid')),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,

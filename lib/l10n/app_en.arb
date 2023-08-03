@@ -2,5 +2,19 @@
     "helloWorld": "Hello World!",
     "@helloWorld": {
         "description": "The conventional newborn programmer greeting"
+    },
+    "title": "Flutter Localizations Tutorial",
+    "@title": {
+        "description": "The application title"
+    },
+    "hello": "Hello, {userName}",
+    "@hello": {
+        "description": "A message with a single parameter",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Cid"
+            }
+        }
     }
 }
