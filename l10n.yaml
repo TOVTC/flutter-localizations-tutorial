@@ -1,0 +1,6 @@
+arb-dir: lib/l10n # path to l10n files
+template-arb-file: app_en.arb # template file
+output-localization-file: app_localizations.dart # location for auto-generated files in dart_tool/flutter_gen
+# files are auto-generated per language as app is run but
+# flutter gen-l10n
+# will generate files without running the app
