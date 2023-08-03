@@ -75,6 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
+            Text('${AppLocalizations.of(context)!.counterSentence} ${AppLocalizations.of(context)!.nClicks(_counter)}'),
           ],
         ),
       ),

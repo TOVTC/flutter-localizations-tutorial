@@ -16,5 +16,19 @@
                 "example": "Cid"
             }
         }
+    },
+    "counterSentence": "You have clicked the button",
+    "@counterSentence": {
+        "description": "A caption for the click counter used in conjunction with nClicks"
+    },
+    "nClicks": "{count, plural, =0{zero times} =1{one time} other{{count} times}}",
+    "@nClicks": {
+    "description": "A plural message",
+    "placeholders": {
+        "count": {
+        "type": "num",
+        "format": "compact"
+        }
+    }
     }
 }

@@ -1,5 +1,7 @@
 {
     "helloWorld": "¡Hola Mundo!",
     "title": "Flutter Localizations Tutorial",
-    "hello": "¡Hola, {userName}"
+    "hello": "¡Hola, {userName}",
+    "counterSentence": "Ha hecho clic en el botón",
+    "nClicks": "{count, plural, =0{cero veces} =1{a tiempo} other{{count} veces}}"
 }
