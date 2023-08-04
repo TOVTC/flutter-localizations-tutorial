@@ -60,8 +60,26 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     String _gender = 'other';
-    List<String> dropdownItems = AppLocalizations.of(context)!.genders.split(":");
-    List<String> dropdownValues = ['male', 'female', 'other'];
+    // List<String> dropdownItems = AppLocalizations.of(context)!.genders.split(":");
+    // List<DropdownMenuItem<String>> items = [];
+    // Map<String, String> genderList = {
+    //   'male': dropdownItems[0],
+    //   'female': dropdownItems[1],
+    //   'other': dropdownItems[2]
+    // };
+    
+    // void listItems () {
+    //   setState(() {
+    //   for (var item in genderList.entries) {
+    //     items.add(DropdownMenuItem<String>(
+    //       value: item.key,
+    //       child: Text(item.value),
+    //     ));
+    //   }
+    //   });
+    // }
+
+    // listItems();
 
     return Scaffold(
       appBar: AppBar(
@@ -86,16 +104,32 @@ class _MyHomePageState extends State<MyHomePage> {
               value: _gender,
               onChanged: (gender) {
                 setState(() {
-                  print(gender);
-                  // _gender = gender!;
+                  _gender = gender!;
+                  print(_gender);
                 });
               },
-              items: dropdownItems.map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList(),
+              // items: dropdownItems.map<DropdownMenuItem<String>>((String value) {
+              //   return DropdownMenuItem<String>(
+              //     value: value,
+              //     child: Text(value),
+              //   );
+              // }).toList(),
+              // items: [
+              //   DropdownMenuItem<String>(
+              //     value: 'male',
+              //     child: Text(dropdownItems[0]),
+              //   ),
+              //   DropdownMenuItem<String>(
+              //     value: 'female',
+              //     child: Text(dropdownItems[1]),
+              //   ),
+              //   DropdownMenuItem<String>(
+              //     value: 'other',
+              //     child: Text(dropdownItems[2]),
+              //   ),
+              // ],
+              // items: items
+              items: [],
             ),
           ],
         ),
