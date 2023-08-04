@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    String _gender = 'other';
+    String? _gender;
     // List<String> dropdownItems = AppLocalizations.of(context)!.genders.split(":");
     // List<DropdownMenuItem<String>> items = [];
     // Map<String, String> genderList = {
@@ -80,6 +80,13 @@ class _MyHomePageState extends State<MyHomePage> {
     // }
 
     // listItems();
+
+    void changeGender(gender) {
+                setState(() {
+                  _gender = gender!;
+                  print(_gender);
+                });
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -103,10 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
             DropdownButton(
               value: _gender,
               onChanged: (gender) {
-                setState(() {
-                  _gender = gender!;
-                  print(_gender);
-                });
+                changeGender(gender);
               },
               // items: dropdownItems.map<DropdownMenuItem<String>>((String value) {
               //   return DropdownMenuItem<String>(
@@ -129,7 +133,34 @@ class _MyHomePageState extends State<MyHomePage> {
               //   ),
               // ],
               // items: items
-              items: [],
+              // items: [
+              //   DropdownMenuItem<String>(
+              //     value: 'male',
+              //     child: Text(AppLocalizations.of(context)!.genders('male')),
+              //   ),
+              //   DropdownMenuItem<String>(
+              //     value: 'female',
+              //     child: Text(AppLocalizations.of(context)!.genders('female')),
+              //   ),
+              //   DropdownMenuItem<String>(
+              //     value: 'other',
+              //     child: Text(AppLocalizations.of(context)!.genders('other')),
+              //   ),
+              // ],
+              items: [
+                DropdownMenuItem<String>(
+                  value: 'male',
+                  child: Text('male'),
+                ),
+                DropdownMenuItem<String>(
+                  value: 'female',
+                  child: Text('female'),
+                ),
+                DropdownMenuItem<String>(
+                  value: 'other',
+                  child: Text('other'),
+                ),
+              ],
             ),
           ],
         ),

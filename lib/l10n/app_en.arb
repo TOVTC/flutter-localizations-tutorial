@@ -31,9 +31,14 @@
         }
     }
     },
-    "genders": "male:female:other",
+    "genders": "{gender, select, male{male} female{female} other{other}}",
     "@genders": {
-        "description": "A list of dropdown gender options"
+    "description": "Gender options",
+    "placeholders": {
+        "gender": {
+        "type": "String"
+        }
+    }
     },
     "pronoun": "{gender, select, male{he} female{she} other{they}}",
     "@pronoun": {
