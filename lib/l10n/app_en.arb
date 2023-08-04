@@ -52,5 +52,28 @@
     "escapedCharacter": "'''{{'Hello World!'}}'''",
     "@escapedCharacter": {
         "description": "Renders with four curly braces"
+    },
+    "currentBalance": "Current balance {value}",
+    "@currentBalance": {
+    "description": "A message with a formatted int parameter",
+    "placeholders": {
+        "value": {
+        "type": "int",
+        "format": "compactCurrency",
+        "optionalParameters": {
+            "decimalDigits": 2
+        }
+        }
+    }
+    },
+    "todaysDate": "Today is {date}",
+    "@todaysDate": {
+    "description": "A message with a date parameter",
+    "placeholders": {
+        "date": {
+        "type": "DateTime",
+        "format": "yMd"
+        }
+    }
     }
 }

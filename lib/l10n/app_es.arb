@@ -6,5 +6,7 @@
     "nClicks": "{count, plural, =0{cero veces} =1{a tiempo} other{{count} veces}}",
     "genders": "{gender, select, male{masculino} female{femenino} other{otro}}",
     "pronoun": "{gender, select, male{él} female{ella} other{ellos}}",
-    "escapedCharacter": "'''{{'¡Hola Mundo!'}}'''"
+    "escapedCharacter": "'''{{'¡Hola Mundo!'}}'''",
+    "currentBalance": "Saldo actual: {value}",
+    "todaysDate": "Hoy es {date}"
 }

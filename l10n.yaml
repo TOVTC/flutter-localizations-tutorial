@@ -1,3 +1,5 @@
+# Typically, iOS applications define key application metadata, including supported locales, in an Info.plist file that is built into the application bundle.
+# Check the documentation for more details https://docs.flutter.dev/accessibility-and-localization/internationalization
 use-escaping: true # if set to true allows use of tokens as normal characters - wrap escaped characters using single quotes, normal single quotes are now two single quotes
 arb-dir: lib/l10n # path to l10n files
 template-arb-file: app_en.arb # template file

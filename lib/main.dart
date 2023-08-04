@@ -71,8 +71,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // example of passed parameter
+            // example of passed parameter + example of providing options
             Text('${AppLocalizations.of(context)!.hello('Cid')} (${AppLocalizations.of(context)!.pronoun(_gender)})'),
+            // example of date formatting - there are 41 format variations
+            Text(AppLocalizations.of(context)!.todaysDate(DateTime.now())),
+            // counter from auto-generated template app
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -98,6 +101,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             // example of escaped characters
             Text(AppLocalizations.of(context)!.escapedCharacter),
+            // example of currency - there are many optional formatting parameters that can be set for currency - check documentation
+            Text(AppLocalizations.of(context)!.currentBalance(_counter)),
           ],
         ),
       ),
