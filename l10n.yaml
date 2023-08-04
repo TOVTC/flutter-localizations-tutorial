@@ -1,3 +1,4 @@
+use-escaping: true # if set to true allows use of tokens as normal characters - wrap escaped characters using single quotes, normal single quotes are now two single quotes
 arb-dir: lib/l10n # path to l10n files
 template-arb-file: app_en.arb # template file
 output-localization-file: app_localizations.dart # location for auto-generated files in dart_tool/flutter_gen

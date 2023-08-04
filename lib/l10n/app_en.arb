@@ -40,7 +40,7 @@
         }
     }
     },
-    "pronoun": "{gender, select, male{he} female{she} other{they}}",
+    "pronoun": "{gender, select, male{he/him} female{she/her} other{they/them}}",
     "@pronoun": {
     "description": "A gendered message",
     "placeholders": {
@@ -48,5 +48,9 @@
         "type": "String"
         }
     }
+    },
+    "escapedCharacter": "'''{{'Hello World!'}}'''",
+    "@escapedCharacter": {
+        "description": "Renders with four curly braces"
     }
 }

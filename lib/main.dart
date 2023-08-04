@@ -50,7 +50,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String _gender = 'other';
+  List<String> dropdownItems = ['male', 'female', 'other'];
+  String _gender = 'male';
 
   void _incrementCounter() {
     setState(() {
@@ -60,8 +61,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> dropdownItems = ['male', 'female', 'other'];
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -73,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             // example of passed parameter
-            Text(AppLocalizations.of(context)!.hello('Cid')),
+            Text('${AppLocalizations.of(context)!.hello('Cid')} (${AppLocalizations.of(context)!.pronoun(_gender)})'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
@@ -90,14 +89,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               items:
-                  dropdownItems.map<DropdownMenuItem<String>>((String value) {
+                dropdownItems.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(AppLocalizations.of(context)!.genders(value)),
                 );
               }).toList(),
             ),
-            Text(AppLocalizations.of(context)!.pronoun(_gender)),
+            // example of escaped characters
+            Text(AppLocalizations.of(context)!.escapedCharacter),
           ],
         ),
       ),
