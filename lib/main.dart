@@ -72,7 +72,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             // example of passed parameter + example of providing options
-            Text('${AppLocalizations.of(context)!.hello('Cid')} (${AppLocalizations.of(context)!.pronoun(_gender)})'),
+            Text(
+                '${AppLocalizations.of(context)!.hello('Cid')} (${AppLocalizations.of(context)!.pronoun(_gender)})'),
             // example of date formatting - there are 41 format variations
             Text(AppLocalizations.of(context)!.todaysDate(DateTime.now())),
             // counter from auto-generated template app
@@ -92,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 });
               },
               items:
-                dropdownItems.map<DropdownMenuItem<String>>((String value) {
+                  dropdownItems.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
                   child: Text(AppLocalizations.of(context)!.genders(value)),
@@ -103,6 +104,27 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(AppLocalizations.of(context)!.escapedCharacter),
             // example of currency - there are many optional formatting parameters that can be set for currency - check documentation
             Text(AppLocalizations.of(context)!.currentBalance(_counter)),
+            // example of specific/manual locale override (remains spanish no matter the device locale)
+            Localizations.override(
+              context: context,
+              locale: const Locale('es'),
+              child: Builder(
+                builder: (context) {
+                  return CalendarDatePicker(
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900),
+                    lastDate: DateTime(2100),
+                    onDateChanged: (value) {},
+                  );
+                },
+              ),
+            ),
+            // does not get automatically translated
+            Localizations.override(
+              context: context,
+              locale: const Locale('es'),
+              child: const Text('Hello'),
+            ),
           ],
         ),
       ),
